@@ -1,0 +1,307 @@
+::-webkit-scrollbar { /* 스크롤바 숨기기 */
+    display: none;
+}
+body { /* body 여백, 패딩 설정 */
+    margin: 0 auto;
+    padding: 0;
+}
+ul, li { /* ul, li 여백, 패딩, 마커타입 설정 */
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+tr, td { /* tr, td 패딩 설정*/
+    padding: 0;
+}
+#smartphone { /* 스마트폰 기본 해상도 480px * 800px */
+    width: 480px;
+    height: 800px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #282828;
+    color: #FBFBFB;
+}
+#actionBar { /* 액션바 */
+    width: 432px;
+    padding: 15px 24px;
+    margin: 0;
+    font-size: 24px;
+    box-shadow: -3px 1px 3px 2px #252525;
+}
+#actionBar li { /* 액션바 아이콘 */
+    float: right;
+    margin-left: 26PX;
+}
+#actionBar img { /* 아이콘 커서 모양 설정 */
+    cursor: pointer;
+}
+#bottomNavigator { /* 하단네비게이션바 */
+    margin: 0;
+    padding: 0px 12px;
+    border-top: 1px solid #414141;
+}
+#bottomNavigator li { /* 하단네비게이션바(menu) 아이콘*/
+    margin: 15px 24px 9px 24px;
+    display: inline-block;
+}
+#bottomNavigator img { /* 아이콘 커서 모양 설정 */
+    cursor: pointer;
+}
+#homeContents { /* home 컨텐츠 영역 */
+    width: 480px;
+    height: 660px;
+    margin: 0;
+    overflow-y: scroll;
+}
+#liveContents, #subscribeContents { /* live, subscribe 컨텐츠  영역*/
+    width: 480px;
+    height: 660px;
+    margin: 0;
+    overflow-y: scroll;
+    display: none;
+}
+#majorFieldContents {
+    width: 444px;
+    height: 651px;
+    padding: 9px 18px 0 18px;
+    overflow-y: scroll;
+    display: none;
+}
+#QnAContents { /* QnA 컨텐츠 영역 */
+    width: 480px;
+    height: 612px;
+    margin: 0;
+    display: none;
+}
+#channelCom { /* channel 컨텐츠 영역의 커뮤니티 페이지 */
+    width: 480px;
+    height: 608px;
+    margin: 0;
+    overflow-y: scroll;
+    display: none
+}
+.videoLength { /* 동영상 시간 */
+    float: right;
+    font-size: 8px;
+    padding: 0 3px;
+    background-color: rgba(40, 40, 40, 0.5);
+    border-radius: 2px;
+    position: relative;
+    bottom: 30px;
+    right: 15px;
+}
+.videoInfo { /* 업로드한 채널, 제목, 소제목, 더보기 아이콘 */
+    width: 480px;
+    margin: 14px 0;
+    padding: 0 14px;
+}
+.videoInfo td:first-child { /* 업로드한 사람 프사 */
+    padding-right: 14px;
+    cursor: pointer;
+}
+.title { /* 제목 */
+    width: 368px;
+    font-size: 16px;
+}
+.smallTitle { /* 소제목 */
+    font-size: 12px;
+    color: #909090;
+}
+.more { /* 더보기 아이콘 */
+    padding-left: 14px;
+}
+.videoLive { /* 실시간 */
+    float: right;
+    font-size: 8px;
+    padding: 0 3px;
+    background-color: #E42526;
+    border-radius: 2px;
+    position: relative;
+    bottom: 30px;
+    right: 15px;
+}
+#subBar { /* 구독바 */
+    margin-top: 10px;
+    padding-left: 9px;
+    width: 400px;
+    overflow-x: scroll;
+}
+.subBarImage { /* 구독바 아이콘 및 글씨 부분 */
+    padding: 0 9px;
+}
+#subBar img, #subBarText td { /* 아이콘 커서 모양 설정 */
+    cursor: pointer;
+}
+#subBarText { /* 구독바 글씨 */
+    text-align: center;
+    font-size: 16px;
+}
+#all { /* 구독바 전체 버튼 */
+    color: #4FE1FB;
+    margin-right: 18px;
+    padding: 0;
+    position: relative;
+    left: 432px;
+    bottom: 75px;
+    cursor: pointer;
+}
+#QnABar { /* FAQ, QnA 버튼 바 */
+    font-size: 16px;
+    text-align: center;
+    display: none;
+}
+#QnABar td { /* 버튼 가로 길이, 패딩 및 커서 모양 설정 */
+   width: 240px;
+   padding: 10px 0;
+   cursor: pointer;
+}
+#faqBtn { /* FAQ border-bottom 스타일 지정 */
+    box-shadow: -2px 2px 4px #252525;
+}
+#qnaBtn { /* QnA border-bottom 스타일 지정 */    
+    border-bottom: 2px solid #4FE1FB;
+}
+#Qlist { /* 질문 리스트 오버플로우 처리 */
+    height: 527px;
+    overflow-y: scroll;
+}
+.QnAList { /* 문의글 목록 여백, 패딩, 폰트 크기 설정 */
+    margin-top: 28px;
+    padding: 0 9px;
+    font-size: 16px; 
+}
+.QnAList td { /* 아이콘과 텍스트 사이 여백 설정 */
+    padding: 0 9px;
+}
+.QnAImg { /* 썸네일 사진과 똑같이 간격 맞추기 */
+    width: 71px;
+    text-align: center;
+}
+.QnAText { /* 질문 미리보기 부분 가로 길이 */
+    width: 255px;
+}
+.mCheck { /* 답변완료 */
+    width: 53px;
+    color: #4FE1FB;
+    font-size: 14px;
+    text-align: center;
+}
+.gCheck, .gPause { /* 확인완료, 답변대기 */
+    width: 53px;
+    color: #909090;
+    font-size: 14px;
+    text-align: center;
+}
+.QnAList td:last-child { /* 문의한 시간 글자색 설정 */
+    color: #909090;
+    font-size: 14px;
+}
+.QnAList td:nth-child(3) { /* 썸네일, 채널 이미지, 커서 변경 */
+    cursor: pointer;
+}
+.QnAList td:nth-child(4) { /* 더보기 아이콘 커서 변경 */
+    cursor: pointer;
+}
+#floating { /* 플로팅 아이콘 위치 지정 */
+    float: right;
+    margin: 20px 25px;
+    cursor: pointer;
+}
+#large li { /* 대분류 가로길이 및 폰트크기 지정 */
+    width: 444px;
+    padding: 9px 0;
+    font-size: 16px;
+}
+#majorFieldContents img { /* +, - 위치 지정 */
+    float: right;
+    cursor: pointer;
+}
+.middle, .small { /* 중분류, 소분류 레이어 숨기기 */
+    display: none;
+}
+#large .middle li { /* 중분류 가로길이 및 폰트크기 지정 */
+    width: 426px;
+    padding: 9px 0 9px 18px;
+    font-size: 14px;
+}
+#large .small li{ /* 소분류 가로길이 및 폰트크기 지정 */
+    width: 408px;
+    padding: 9px 0 9px 36px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.small span { /* 소분류에 span태그 글씨색 바꾸기 */
+    color: #909090;
+}
+#channelTop { /* 채널 상단 배경색 지정 */
+    background-color: #7AC3D0;
+    display: none;
+}
+#channelActionBar { /* channel 액션바 패딩 지정 */
+    padding: 15px 11px;
+}
+#channelMenu { /* channel 메뉴 패딩지정 */
+    padding-top: 15px;
+}
+#channelActionBar span { /* 아이콘 폰트 크기 및 글씨 위치, 패딩 지정 */
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+    padding: 0 11px;
+}
+#channelActionBar span:nth-child(2) { /* 채널 주인 이름 공간 가로 크기 지정 */
+    width: 275px;
+}
+#channelActionBar img { /* channel 액션바 이미지 커서 모양 바꾸기 */
+    cursor: pointer;
+}
+#channelMenu span{ /* 메뉴 폰트 크기 및 글씨 위치 지정 */
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    width: 93px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+.post { /* 게시글 padding 및 border 지정*/
+    font-size: 16px;
+    padding: 20px 14px;
+    border-bottom: 1px solid #909090;
+}
+.post table img { /* 이미지 여백 주기 */
+    padding-right: 14px;
+}
+.post table td:last-child { /* 글씨색 지정 */
+    color: #909090;
+}
+#context { /* 게시글 내용 여백 및 가로 길이 지정 */
+    margin: 15px 0;
+    width: 430px;
+}
+#context span { /* '자세히 보기' 글씨색 지정 */
+    color: #909090;
+    cursor: pointer;
+}
+#info { /* '좋아요', '싫어요', 댓글 바 여백 지정 */
+    font-size: 14px;
+    margin: 15px 4px 0 4px;
+}
+#info span { /* '좋아요' 수와 아이콘 사이의 간격 지정 */
+    display: inline-block;
+    margin: 0 8px;
+    vertical-align: top;
+}
+#noLike { /* '싫어요' 아이콘과 글씨 사이의 간격 */
+    margin-left: 10px;
+    cursor: pointer;
+}
+#info img:first-child { /* '좋아요' 커서 모양 바꾸기 */
+    cursor: pointer;
+}
+#info img:last-child { /* 댓글 아이콘 위치 지정 */
+    float: right;
+}
+#info span:nth-child(4){ /* 댓글 수 간격 지정 */
+    float: right;
+    margin: 0 4px 0 8px;
+    cursor: pointer;
+}

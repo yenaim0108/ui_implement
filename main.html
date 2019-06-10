@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>main</title>
+        <style>@import "style.css";</style>
+        <script src="function.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap&subset=korean" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id='smartphone'> <!--스마트폰 크기 480px * 800px-->
+            <div id='actionBar'> <!--액션바-->
+            <ul>
+                LOGO
+                <li><img src='image/user.png' alt='마이페이지'></li>
+                <li><img src='image/search.png' alt='검색'></li>
+            </ul>
+            </div>
+
+            <table id='QnABar'> <!--QnA컨텐츠 영역 상단-->
+                <tr>
+                    <td id='faqBtn' onclick='clickQnA(0)'>FAQ</td>
+                    <td id='qnaBtn' onclick='clickQnA(1)'>QnA</td>
+                </tr>
+            </table>
+
+            <div id='channelTop'> <!--channel 상단-->
+                <div id='channelActionBar'> <!--channel 액션바-->
+                    <span><img src='image/upButton.png' alt='업버튼' onclick='upBtn()'></span>
+                    <span>보안전문</span>
+                    <span><img src='image/search.png' alt='검색'></span>
+                    <span><img src='image/more28.png' alt='더보기'></span>
+                </div>
+                <div id='channelMenu'> <!--channel 메뉴-->
+                    <span class='menuBtn' onclick='channelPage(0, this)'>홈</span>
+                    <span class='menuBtn' onclick='channelPage(1, this)'>동영상</span>
+                    <span class='menuBtn' onclick='channelPage(2, this)'>재생목록</span>
+                    <span class='menuBtn' onclick='channelPage(3, this)'>커뮤니티</span>
+                    <span class='menuBtn' onclick='channelPage(4, this)'>정보</span>
+                </div>
+            </div>
+
+            <div id='homeContents'> <!--home 컨텐츠 영역-->
+                <!--동영상1-->
+                <div> <!--썸네일-->
+                    <img src='image/hacker.png' alt='썸네일'>
+                    <div class='videoLength'>45:06</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/security44.png' onclick='channel()' alt='보안전문'></td>
+                        <td class='title'>IoT 보안, 뚜렷한 해결책은?</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>보안전문 · 조회수 11만회 · 16시간 전</td>
+                    </tr>
+                </table>
+                <!--동영상2-->
+                <div> <!--썸네일-->
+                    <img src='image/profiler.png' alt='썸네일'>
+                    <div class='videoLength'>15:22</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/pyo44.png' alt='표창원'></td>
+                        <td class='title'>표창원의 혼맥 프로파일링</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>표창원 · 조회수 132만회 · 4개월 전</td>
+                    </tr>
+                </table>
+                <!--동영상3-->
+                <div> <!--썸네일-->
+                        <img src='image/programming.png' alt='썸네일'>
+                        <div class='videoLength'>04:32:12</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/coding44.png' alt='코딩좋아'></td>
+                        <td class='title'>C언어 기초 프로그래밍 강좌 10강 - 반복 함수와 재귀 함수 [C Programming Tutorial For Begin ···</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>코딩좋아 · 조회수 1.6만회 · 2년 전</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div id='liveContents'> <!--live 컨텐츠 영역-->
+                 <!--동영상1-->
+                <div> <!--썸네일-->
+                    <img src='image/cyberCrime.png' alt='썸네일'>
+                    <div class='videoLive'>실시간</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/pyo44.png' alt='표창원'></td>
+                        <td class='title'>사이버 범죄.. 그 해결책은..?</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>표창원 · 124명 시청 중</td>
+                    </tr>
+                </table>
+                <!--동영상2-->
+                <div> <!--썸네일-->
+                    <img src='image/trend.png' alt='썸네일'>
+                    <div class='videoLive'>실시간</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/security44.png' onclick="channel()" alt='보안전문'></td>
+                        <td class='title'>최신 보안 트렌드에 대해 자유로운 토론을 해봅시다!!</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>보안전문 · 489명 시청 중</td>
+                    </tr>
+                </table>
+                <!--동영상3-->
+                <div> <!--썸네일-->
+                    <img src='image/math.png' alt='썸네일'>
+                    <div class='videoLive'>실시간</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/na44.png' alt='나프밍'></td>
+                        <td class='title'>보안은 반드시 수학이 필요한가요..?</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>나프밍 · 593명 시청 중</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id='subscribeContents'> <!--subscribe 컨텐츠 영역-->
+                <!--구독바-->
+                <div id='subBar'>
+                    <table>
+                        <tr>
+                            <td class='subBarImage'><img src='image/na.png' alt='나프밍'></td>
+                            <td class='subBarImage'><img src='image/security.png'  onclick='channel()' atl='보안전문'></td>
+                            <td class='subBarImage'><img src='image/pink.png' alt='리버싱의神'></td>
+                            <td class='subBarImage'><img src='image/pikachu.png' alt='삐까아~?'></td>
+                            <td class='subBarImage'><img src='image/coding.png' alt='코딩좋아'></td>
+                            <td class='subBarImage'><img src='image/pyo.png' alt='표창원'></td>
+                        </tr>
+                        <tr id='subBarText'>
+                            <td>나프밍</td>
+                            <td  onclick="channel()">보안전문</td>
+                            <td>리버싱의神</td>
+                            <td>삐까아~?</td>
+                            <td>코딩좋아</td>
+                            <td>표창원</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id='all'>전체</div>
+                <!--동영상1-->
+                 <div> <!--썸네일-->
+                    <img src='image/math.png' alt='썸네일'>
+                    <div class='videoLength'>02:43:39</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2' id='ab'><img src='image/na44.png' alt='나프밍'></td>
+                        <td class='title'>보안은 반드시 수학이 필요한가요..?</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>나프밍 · 조회수 238만회 · 3시간 전</td>
+                    </tr>
+                </table>
+                <!--동영상2-->
+                <div> <!--썸네일-->
+                    <img src='image/hacker.png' alt='썸네일'>
+                    <div class='videoLength'>45:06</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/security44.png' onclick='channel()' alt='보안전문'></td>
+                        <td class='title'>IoT 보안, 뚜렷한 해결책은?</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                   <tr>
+                        <td class='smallTitle'>보안전문 · 조회수 11만회 · 16시간 전</td>
+                   </tr>
+                </table>
+                <!--동영상3-->
+                <div> <!--썸네일-->
+                        <img src='image/programming.png' alt='썸네일'>
+                        <div class='videoLength'>04:32:12</div>
+                </div>
+                <table class='videoInfo'> <!--동영상 정보-->
+                    <tr>
+                        <td rowspan='2'><img src='image/coding44.png' alt='코딩좋아'></td>
+                        <td class='title'>C언어 기초 프로그래밍 강좌 10강 - 반복 함수와 재귀 함수 [C Programming Tutorial For Begin ···</td>
+                        <td class='more' rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                    </tr>
+                    <tr>
+                        <td class='smallTitle'>코딩좋아 · 조회수 1.6만회 · 2년 전</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div id='majorFieldContents'> <!--majorField 컨텐츠 영역-->
+                <ul id='large'> <!--대분류-->
+                    <li>프로그래밍 언어<img src='image/mPlus16.png' onclick='middleShowHidden(0, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류-->
+                            <li>
+                                - C언어<img src='image/gPlus.png' onclick='smallShowHidden(0, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류-->
+                                    <li>C프로그래밍 개념 + 실력완성<br><span>44강/150일/150,000원</span></li>
+                                    <li>C프로그래밍 심화<br><span>강/150일/200,000원</span></li>
+                                </ul>
+                            </li>    
+                            <li>- 자바<img src='image/gPlus.png' onclick='smallShowHidden(1, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류--></ul>
+                            </li>
+                            <li>- 파이썬<img src='image/gPlus.png' onclick='smallShowHidden(2, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류--></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>네트워크<img src='image/mPlus16.png' onclick='middleShowHidden(1, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류-->
+                            <li>- TCP/IP 소켓 프로그래밍<img src='image/gPlus.png' onclick='smallShowHidden(3, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류-->
+                                    <li>OOO의 열혈 소켓 프로그래밍 파헤치기<br><span>30강/80일/100,000원</span></li>
+                                </ul>
+                            </li>
+                            <li>- 네트워크 관리사<img src='image/gPlus.png' onclick='smallShowHidden(4, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류-->
+                                    <li>필기와 실기를 동시에 잡는 네트워크 관리사 1급 종합<br><span>65강/200일/350,000원</span></li>
+                                    <li>기초부터 차근차근 다지는 네트워크 관리시 2급 필기<br><span>30강/120일/150,000원</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>운영체제<img src='image/mPlus16.png' onclick='middleShowHidden(2, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류-->
+                            <li>- Linux<img src='image/gPlus.png' onclick='smallShowHidden(5, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class='small'> <!--소분류-->
+                                    <li>리눅스 기초<br><span>40강/130일/150,000원</span></li>
+                                    <li>리눅스 완성<br><span>50강/160일/250,000원</span></li>
+                                </ul>
+                            </li>
+                            <li>- Windows<img src='image/gPlus.png' onclick='smallShowHidden(6, this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class='small'> <!--소분류-->
+                                    <li>윈도우 기초탄탄<br><span>50강/200일/300,000원</span></li>
+                                    <li>윈도우 중급<br><span>40강/150일/250,000원</span></li>
+                                    <li>윈도우 고급 심화 과정<br><span>20강/100일/200,000원</span></li>
+                                </ul>
+                            </li>
+                            <li>- Mac<img src='image/gPlus.png' onclick='smallShowHidden(7 ,this, this.parentElement)' alt='하위메뉴보기'>
+                                <ul class ='small'> <!--소분류--></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>서버<img src='image/mPlus16.png' onclick='middleShowHidden(3, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류--></ul>
+                    </li>
+                    <li>리버스엔지니어링<img src='image/mPlus16.png' onclick='middleShowHidden(4, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류--></ul>
+                    </li>
+                    <li>디지털포렌식<img src='image/mPlus16.png' onclick='middleShowHidden(5, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류--></ul>
+                    </li>
+                    <li>범죄심리학<img src='image/mPlus16.png' onclick='middleShowHidden(6, this)' alt='하위메뉴보기'>
+                        <ul class='middle'> <!--중분류--></ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <div id='QnAContents'> <!--QnA 컨텐츠 영역-->
+                <div id='Qlist'> <!--QnAList-->
+                    <table class='QnAList'> <!--문의01-->
+                        <tr>
+                            <td class='mCheck'><img src='image/mcheck.png' alt='답변완료'></td>
+                            <td class='QnAText'>정보보안을 공부하고 있는데 리버스 엔지니어링에 대해 자세히 공부 ···</td>
+                            <td class='QnAImg' rowspan='2'><img src='image/pikachu40.png' alt='삐까아~?'></td>
+                            <td rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                        </tr>
+                        <tr>
+                            <td class='mCheck'>답변완료</td>
+                            <td>2시간전</td>
+                        </tr>
+                    </table>
+                    <table class='QnAList'> <!--문의02-->
+                        <tr>
+                            <td class='gPause'><img src='image/gPause.png' alt='답변대기'></td>
+                            <td class='QnAText'>디지털 포렌식을 공부하다가 범죄심리학에 관심을 가지게 돼서 공부 ···</td>
+                            <td rowspan='2'><img src='image/cyberCrime40.png' alt='사이버 범죄 ···'></td>
+                            <td rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                        </tr>
+                        <tr>
+                            <td class='gPause'>답변대기</td>
+                            <td>16시간전</td>
+                        </tr>
+                    </table>
+                    <table class='QnAList'> <!--문의03-->
+                        <tr>
+                            <td class='gPause'><img src='image/gPause.png' alt='답변대기'></td>
+                            <td class='QnAText'>모의해킹전문가가 되고 싶어서 준비를 할려고 합니다. 모의해킹전문 ···</td>
+                            <td rowspan='2'><img src='image/hacker40.png' alt='IoT 보안 ···'></td>
+                            <td rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                        </tr>
+                        <tr>
+                            <td class='gPause'>답변대기</td>
+                            <td>14일전</td>
+                        </tr>
+                    </table>
+                    <table class='QnAList'> <!--문의04-->
+                        <tr>
+                            <td class='gCheck'><img src='image/gcheck.png' alt='확인완료'></td>
+                            <td class='QnAText'>보안공부를 시작한지 얼마 안된 학생입니다. 제가 원래 네트워크 분 ···</td>
+                            <td class='QnAImg' rowspan='2'><img src='image/security40.png' onclick='channel()' alt='보안전문'></td>
+                            <td rowspan='2'><img src='image/more.png' alt='더보기'></td>
+                        </tr>
+                        <tr>
+                            <td class='gCheck'>확인완료</td>
+                            <td>1개월전</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id='floating'> <!--플로팅 아이콘-->
+                    <img src='image/floating.png' alt='문의'>
+                </div>
+            </div>
+
+            <div id='channelCom'> <!--Channel 컨텐츠 영역의 커뮤니티 페이지-->
+                <div class='post'> <!--게시글01-->
+                    <table> 
+                        <tr>
+                            <td rowspan='2'><img src='image/security44.png' alt='보안전문'></td>
+                            <td>보안전문</td>
+                        </tr>
+                        <tr>
+                            <td>2주 전</td>
+                        </tr>
+                    </table>
+                    <div id='context'><!--게시글 내용-->
+                        ***숫자로 하는 야구게임***<br>
+                        숫자 야구 게임의 규칙은 상대방이 생각한 4자리 숫자를 맞추는 건데요.
+                        이 때, 각 4개의 숫자가 중복되면 안됩니다. 내가 숫자를 말하면 상대방음
+                        자신이 생각한 숫자랑 비교헸을 때, 숫자와 자릿수가 모두 같으면 Strike,
+                        숫자는 같지만 자릿수가 다르면 B ···<br>
+                        <span>자세히 보기</span>
+                    </div>
+                    <img src='image/numBaseball.png' alt='숫자야구게임'> <!--채널 주인이 올린 사진-->
+                    <div id='info'>
+                        <img src='image/like.png' alt='좋아요'>
+                        <span>1.3천</span>
+                        <img id='noLike' src='image/noLike.png' alt='싫어요'>
+                        <span>325</span>
+                        <img src='image/comments.png' alt='댓글'>
+                    </div>
+                </div>
+
+                <div class='post'> <!--게시글02-->
+                    <table> 
+                        <tr>
+                            <td rowspan='2'><img src='image/security44.png' alt='보안전문'></td>
+                            <td>보안전문</td>
+                        </tr>
+                        <tr>
+                            <td>1개월 전(수정됨)</td>
+                        </tr>
+                    </table>
+                    <div id='context'><!--게시글 내용-->
+                        오늘은 포인터 배열과 배열의 포인터에 대해서 알아보겠습니다.
+                        우선 포인터 배열은 배열이 저장할 수 있는 요소가 포인터(*) 변수
+                        즉, 주소를 저장할 수 있는 배열을 의미합니다. 그럼 한 번 예제를 살펴보도록 할까요..?
+                        int형 포인터 변수를 저장할 수 있는 ···<br>
+                        <span>자세히 보기</span>
+                    </div>
+                    <img src='image/pointerArray.png' alt='포인터배열'> <!--채널 주인이 올린 사진-->
+                    <div id='info'>
+                        <img src='image/like.png' alt='좋아요'>
+                        <span>6.1천</span>
+                        <img id='noLike' src='image/noLike.png' alt='싫어요'>
+                        <span>832</span>
+                        <img src='image/comments.png' alt='댓글'>
+                    </div>
+                </div>
+
+                <div class='post'> <!--게시글03-->
+                    <table> 
+                        <tr>
+                            <td rowspan='2'><img src='image/security44.png' alt='보안전문'></td>
+                            <td>보안전문</td>
+                        </tr>
+                        <tr>
+                            <td>3개월 전(수정됨)</td>
+                        </tr>
+                    </table>
+                    <div id='context'><!--게시글 내용-->
+                        오랜만이에요! 다들 잘 지내셨나요~?? 제가 쉬었다 오는 동안에
+                        정보보안전문가라는 직업에 대해 많은 질문들이 와있더라구요.
+                        그래서 이번에는 여러분들이 보내주신 질문 중에서 겹치는 질문들은 추리고
+                        제가 잘 답변해 드릴 수 있는 질문들을 모아왔어요 ···<br>
+                        <span>자세히 보기</span>
+                    </div>
+                    <div id='info'>
+                        <img src='image/like.png' alt='좋아요'>
+                        <span>4.8천</span>
+                        <img id='noLike' src='image/noLike.png' alt='싫어요'>
+                        <span>43</span>
+                        <img src='image/comments.png' alt='댓글'>
+                    </div>
+                </div>
+            </div>
+
+            <div id='bottomNavigator'> <!--하단네비게이션바-->
+                <ul> 
+                    <li><img id='home' src='image/slcHome.png' onclick="layerShowHidden(0, 'homeContents')" alt='홈'></li>
+                    <li><img id='live' src='image/unslcLive.png' onclick="layerShowHidden(1, 'liveContents')" alt='실시간'></li>
+                    <li><img id='subscribe' src='image/unslcSubscribe.png' onclick="layerShowHidden(2, 'subscribeContents')" alt='구독'></li>
+                    <li><img id='majorField' src='image/unslcMajorField.png' onclick="layerShowHidden(3, 'majorFieldContents')" alt='전공분야'></li>
+                    <li><img id='QnA' src='image/unslcQnA.png' onclick="layerShowHidden(4, 'QnAContents')" alt='QnA'></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
